@@ -12,6 +12,7 @@
 
 #include "ft_strlen.h"
 #include "ft_isprint.h"
+#include <stddef.h>
 
 int	ft_strlen(const char *s)
 {

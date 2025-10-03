@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   strlen.h                                           :+:      :+:    :+:   */
+/*   ft_memset.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: danrodr3 <danrodr3@students.42madrid.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/01 18:11:55 by danrodr3          #+#    #+#             */
-/*   Updated: 2025/10/01 18:15:02 by danrodr3         ###   ########.fr       */
+/*   Created: 2025/10/03 10:50:50 by danrodr3          #+#    #+#             */
+/*   Updated: 2025/10/03 10:52:55 by danrodr3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#ifndef FT_STRLEN_H
-# define FT_STRLEN_H
+#ifndef FT_MEMSET_H
+# define FT_MEMSET_H
 
-size_t	ft_strlen(const char *s);
+void	*memset(size_t n; void s[n], int c, size_t n);
 #endif
