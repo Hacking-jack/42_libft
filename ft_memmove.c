@@ -1,17 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isascii.c                                       :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: danrodr3 <danrodr3@students.42madrid.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/30 19:53:55 by danrodr3          #+#    #+#             */
-/*   Updated: 2025/10/06 13:11:14 by danrodr3         ###   ########.fr       */
+/*   Created: 2025/10/03 13:41:04 by danrodr3          #+#    #+#             */
+/*   Updated: 2025/10/06 13:09:41 by danrodr3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
+#include <stddef.h>
 
-int	ft_isascii(int c)
+void	*ft_memmove(void *dest, const void *src, size_t n)
 {
-	return (c > -1 && c < 128);
+
 }

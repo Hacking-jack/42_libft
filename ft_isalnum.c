@@ -1,18 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   isalnum.c                                          :+:      :+:    :+:   */
+/*   ft_isalnum.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: danrodr3 <danrodr3@students.42madrid.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/30 15:51:02 by danrodr3          #+#    #+#             */
-/*   Updated: 2025/09/30 16:00:01 by danrodr3         ###   ########.fr       */
+/*   Updated: 2025/10/06 13:11:56 by danrodr3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_isalnum.h"
-#include "ft_isdigit.h"
-#include "ft_isalpha.h"
+#include "libft.h"
 
 int	ft_isalnum(int c)
 {

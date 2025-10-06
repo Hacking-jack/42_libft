@@ -1,17 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isascii.c                                       :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: danrodr3 <danrodr3@students.42madrid.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/30 19:53:55 by danrodr3          #+#    #+#             */
-/*   Updated: 2025/10/06 13:11:14 by danrodr3         ###   ########.fr       */
+/*   Created: 2025/10/03 12:47:52 by danrodr3          #+#    #+#             */
+/*   Updated: 2025/10/06 13:12:13 by danrodr3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
+#include <stddef.h>
 
-int	ft_isascii(int c)
+//inicializa memoria  0
+void	bzero(void *s, size_t n)
 {
-	return (c > -1 && c < 128);
+	ft_memset(s, 0, n);
 }
