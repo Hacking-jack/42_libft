@@ -33,7 +33,7 @@ size_t	ft_strlen(const char *s);
 
 void	ft_bzero(void *s, size_t n);
 
-size_t	strlcpy(char *dst, const char *src, size_t size);
+size_t	ft_strlcpy(char *dst, const char *src, size_t size);
 
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize);
 
@@ -46,4 +46,6 @@ char	*ft_strchr(const char *string, int c);
 char	*ft_strrchr(const char *string, int c);
 
 int		ft_strncmp(const char *string1, const char *string2, size_t count);
+
+void	*ft_memchr(const void *buf, int c, size_t count);
 #endif

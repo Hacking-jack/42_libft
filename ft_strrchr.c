@@ -25,8 +25,8 @@ char	*ft_strrchr(const char *string, int c)
 		i++;
 	}
 	if (c == '\0')
-		return (&string[i]);
+		return ((char *) &string[i]);
 	if (j != -1)
-		return (&string[j]);
+		return ((char *) &string[j]);
 	return (NULL);
 }
