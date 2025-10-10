@@ -20,7 +20,7 @@ void	*ft_memchr(const void *buf, int c, size_t count)
 	cmp = (unsigned char)c;
 	while (count--)
 	{
-		if (*ptr == cmp )
+		if (*ptr == cmp)
 			return ((void *)ptr);
 		ptr++;
 	}

@@ -8,6 +8,7 @@ AR = ar rcs
 RM = rm -f
 
 # Archivos fuente (.c)
+#SRCS = ft_isalpha.c
 SRCS = $(wildcard ft_*.c)
 # Convierte .c en .o
 OBJS = $(SRCS:.c=.o)

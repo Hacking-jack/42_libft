@@ -11,11 +11,12 @@
 /* ************************************************************************** */
 #include "libft.h"
 
-int	toupper(int c)
+int	ft_toupper(int c)
 {
-	if (c <= 122 && c >= 97)
-	{
-		c -= 32;
-	}
-	return (c);
+	int	ret;
+	
+	ret = c;
+	if (c >= 'a' && c <= 'z')
+		ret = c - 32;
+	return (ret);
 }

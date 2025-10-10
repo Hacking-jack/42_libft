@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: danrodr3 <danrodr3@students.42madrid.com>  +#+  +:+       +#+        */
+/*   By: danrodr3 <danrodr3@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/03 12:47:52 by danrodr3          #+#    #+#             */
-/*   Updated: 2025/10/06 13:12:13 by danrodr3         ###   ########.fr       */
+/*   Updated: 2025/10/10 12:57:12 by danrodr3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "libft.h"
 
+#include "libft.h"
 //inicializa memoria  0
-void	bzero(void *s, size_t n)
+void	ft_bzero(void *s, size_t n)
 {
 	ft_memset(s, 0, n);
 }

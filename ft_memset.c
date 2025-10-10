@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: danrodr3 <danrodr3@students.42madrid.com>  +#+  +:+       +#+        */
+/*   By: danrodr3 <danrodr3@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/03 11:05:40 by danrodr3          #+#    #+#             */
-/*   Updated: 2025/10/06 13:09:12 by danrodr3         ###   ########.fr       */
+/*   Updated: 2025/10/10 12:56:15 by danrodr3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-//este metodo rellena un array/espacio en memoria 
-//con el caracter c que nosotros deseemos
+//this method fill an array and 
+// sets it to whatever cahr we want
 void	*ft_memset(void *s, int c, size_t n)
 {
 	unsigned char	*p;

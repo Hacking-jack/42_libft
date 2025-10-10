@@ -23,4 +23,3 @@ char	*ft_strchr(const char *string, int c)
 		return ((char *)string);
 	return (NULL);
 }
-

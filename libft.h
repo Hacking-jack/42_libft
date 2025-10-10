@@ -3,12 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: danrodr3 <danrodr3@students.42madrid.com>  +#+  +:+       +#+        */
+/*   By: danrodr3 <danrodr3@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/06 12:43:22 by danrodr3          #+#    #+#             */
-/*   Updated: 2025/10/08 15:46:48 by danrodr3         ###   ########.fr       */
+/*   Updated: 2025/10/10 12:57:42 by danrodr3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #ifndef LIBFT_H
 # define LIBFT_H
 # include <stddef.h>
@@ -48,4 +49,14 @@ char	*ft_strrchr(const char *string, int c);
 int		ft_strncmp(const char *string1, const char *string2, size_t count);
 
 void	*ft_memchr(const void *buf, int c, size_t count);
+
+int		ft_atoi(const char *str);
+
+int		ft_memcmp(const void *buf1, const void *buf2, size_t count);
+
+char	*ft_strnstr(const char *haystack, const char *needle, size_t len);
+
+void	*ft_calloc(size_t num, size_t size);
+
+char	*ft_strdup(const char *string);
 #endif
