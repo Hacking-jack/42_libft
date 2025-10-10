@@ -1,38 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: danrodr3 <danrodr3@students.42madrid.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/01 18:17:45 by danrodr3          #+#    #+#             */
-/*   Updated: 2025/10/06 13:08:29 by danrodr3         ###   ########.fr       */
+/*   Created: 2025/10/08 15:09:08 by danrodr3          #+#    #+#             */
+/*   Updated: 2025/10/08 15:46:16 by danrodr3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(const char *s)
+size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
-	size_t	counter;
+	size_t	src_len;
+	size_t	dest_len;
+	size_t	i;
+	size_t	j;
 
-	counter = 0;
-	while (s[counter] != '\0')
+	src_len = ft_strlen(src);
+	dest_len = ft_strlen(dst);
+	if (dstsize <= dest_len)
+		return (dstsize + src_len);
+	i = dest_len;
+	j = 0;
+	while (src[j] != '\0' && i < dstsize - 1)
 	{
-		counter++;
+		dst[i] = src[j];
+		i++;
+		j++;
 	}
-	return (counter);
+	dst[i] = '\0';
+	return (dest_len + src_len);
 }
-/*
-#include <stdio.h>
-int main(void)
-{
-    char *str1 = "como";
-    char *str2 = "linea\nnueva";
-
-    printf("ft_strlen(\"%s\") = %zu\n", str1, ft_strlen(str1));
-    printf("ft_strlen(\"%s\") = %zu\n", str2, ft_strlen(str2));
-
-
-    return 0;
-}*/

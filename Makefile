@@ -1,31 +1,41 @@
+# 📁 Makefile para librería libft
+
+# Configuración
 NAME = libft.a
 CC = gcc
-CFLAGS = -Wall -Werror -Wextra
+CFLAGS = -Wall -Wextra -Werror
 AR = ar rcs
+RM = rm -f
 
-# Automatically find all source files in the current directory
-SOURCES = $(wildcard *.c)
-# Generate a list of object files from the source files
-OBJECTS = $(SOURCES:.c=.o)
-# Name of your final library
-TARGET = libft.a
+# Archivos fuente (.c)
+SRCS = $(wildcard ft_*.c)
+# Convierte .c en .o
+OBJS = $(SRCS:.c=.o)
 
-# Default goal: build the library
-all: $(TARGET)
+# Regla principal
+all: $(NAME)
 
-# Rule to create the library from the object files
-$(TARGET): $(OBJECTS)
-	$(AR) $@ $^
-	@echo "Library $@ built successfully."
+# Compila la librería
+$(NAME): $(OBJS)
+	@$(AR) $(NAME) $(OBJS)
+	@echo "✅ Librería $(NAME) compilada"
 
-# Rule to compile each .c file into a .o file
+# Compila cada .c en .o
 %.o: %.c
-	$(CC) -MMD -MP $(CFLAGS) -c $< -o $@
+	@$(CC) $(CFLAGS) -c $< -o $@
 
-# Include auto-generated dependency files
--include $(SOURCES:.c=.d)
-
-# Phony target to clean up built files
-.PHONY: clean
+# Limpia archivos objeto
 clean:
-	rm -f $(TARGET) *.o *.d
+	@$(RM) $(OBJS)
+	@echo "🧹 Objetos eliminados"
+
+# Limpia todo (objetos y librería)
+fclean: clean
+	@$(RM) $(NAME)
+	@echo "🗑️  Librería $(NAME) eliminada"
+
+# Recompila desde cero
+re: fclean all
+
+# Evita conflictos con archivos que se llamen igual
+.PHONY: all clean fclean re

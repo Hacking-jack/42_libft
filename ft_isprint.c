@@ -9,7 +9,6 @@
 /*   Updated: 2025/10/06 13:10:43 by danrodr3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 #include "libft.h"
 //este metodo revisa si es un caracter imprimible
 int	ft_isprint(int c)

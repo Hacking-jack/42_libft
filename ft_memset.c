@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stddef.h>
 //este metodo rellena un array/espacio en memoria 
 //con el caracter c que nosotros deseemos
 void	*ft_memset(void *s, int c, size_t n)

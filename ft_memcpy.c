@@ -10,7 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
-#include <stddef.h>
 //copia un array al otro
 void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
