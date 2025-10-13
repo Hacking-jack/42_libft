@@ -1,33 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: danrodr3 <danrodr3@students.42madrid.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/10 18:14:21 by danrodr3          #+#    #+#             */
-/*   Updated: 2025/10/10 18:28:22 by danrodr3         ###   ########.fr       */
+/*   Created: 2025/10/12 11:58:04 by danrodr3          #+#    #+#             */
+/*   Updated: 2025/10/12 13:15:39 by danrodr3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 #include <stdlib.h>
 
-char	*ft_strdup(const char *string)
+char	*ft_strtrim(char const *s1, char const *set)
 {
-	char	*str2;
-	int		length;
-	int		i;
+	char	*trim;
+	size_t	len;
 
-	if (string == NULL || *string == '\0')
+	if (s1 == NULL || set == NULL)
 		return (NULL);
-	i = 0;
-	length = ft_strlen(string);
-	str2 = malloc(length + 1);
-	while (i < length)
-	{
-		str2[i] = string[i];
-		i++;
-	}
-	str2[length] = '\0';
-	return (str2);
+	len = ft_strlen(s1);
+	trim = malloc(len + 1);
+	
 }
