@@ -14,5 +14,18 @@
 char	**ft_split(char const *s, char c)
 {
 	char	**spl;
+	size_t	len;
+	size_t	i;
+	char	*bck;
+	size_t	end;
 
+	if (*s)
+		return (NULL);
+	bck = ft_strtrim(s, c);
+	len = ft_strlen(bck);
+	start = 0;
+	while (i < len && (bck[i++] == c))
+		start++
+	i = 0;
+	spl = malloc(start + 1);
 }
