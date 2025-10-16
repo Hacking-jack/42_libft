@@ -10,7 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
-#include <stdlib.h>
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
@@ -28,7 +27,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	while (end > start && ft_strchr(set, s1[end - 1]))
 		end--;
 	len = end - start;
-	result = (char *)malloc(len + 1);
+	result = (char *)malloc(len + 1 * sizeof(char));
 	if (!result)
 		return (NULL);
 	ft_memcpy(result, s1 + start, len);

@@ -1,37 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: danrodr3 <danrodr3@students.42madrid.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/01 18:17:45 by danrodr3          #+#    #+#             */
-/*   Updated: 2025/10/06 13:08:29 by danrodr3         ###   ########.fr       */
+/*   Created: 2025/10/15 12:44:08 by danrodr3          #+#    #+#             */
+/*   Updated: 2025/10/15 13:03:06 by danrodr3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 #include "libft.h"
 
-size_t	ft_strlen(const char *s)
+void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
-	size_t	counter;
+	size_t	i;
 
-	counter = 0;
-	while (s[counter] != '\0')
+	if (s != NULL && f != NULL)
 	{
-		counter++;
+		i = 0;
+		while (s[i])
+		{
+			f(i, &s[i]);
+			i++;
+		}
 	}
-	return (counter);
 }
-/*
-int main(void)
-{
-    char *str1 = "como";
-    char *str2 = "linea\nnueva";
-
-    printf("ft_strlen(\"%s\") = %zu\n", str1, ft_strlen(str1));
-    printf("ft_strlen(\"%s\") = %zu\n", str2, ft_strlen(str2));
-
-
-    return 0;
-}*/

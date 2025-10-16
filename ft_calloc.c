@@ -10,13 +10,12 @@
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
-#include <stdlib.h>
 
 void	*ft_calloc(size_t num, size_t size)
 {
 	size_t	*iniciado;
 
-	iniciado = (size_t *)malloc(size * num);
+	iniciado = (size_t *)malloc(size * num * sizeof(size_t));
 	if (!iniciado)
 		return (NULL);
 	ft_bzero(iniciado, size * num);

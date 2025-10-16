@@ -1,37 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: danrodr3 <danrodr3@students.42madrid.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/01 18:17:45 by danrodr3          #+#    #+#             */
-/*   Updated: 2025/10/06 13:08:29 by danrodr3         ###   ########.fr       */
+/*   Created: 2025/10/14 15:01:38 by danrodr3          #+#    #+#             */
+/*   Updated: 2025/10/14 18:34:08 by danrodr3         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 #include "libft.h"
 
-size_t	ft_strlen(const char *s)
+char	*ft_itoa(int n)
 {
-	size_t	counter;
+	int		i;
+	long	tmp;
+	char	result[12];
 
-	counter = 0;
-	while (s[counter] != '\0')
+	if (n == 0)
+		return (ft_strdup("0"));
+	tmp = n;
+	i = 11;
+	result[11] = '\0';
+	if (tmp < 0)
+		tmp *= -1;
+	while (tmp > 0)
 	{
-		counter++;
+		result[i--] = (tmp % 10) + '0';
+		tmp /= 10;
 	}
-	return (counter);
+	if (n < 0)
+		result[i--] = '-';
+	return (ft_strdup(&result[i + 1]));
 }
-/*
-int main(void)
-{
-    char *str1 = "como";
-    char *str2 = "linea\nnueva";
-
-    printf("ft_strlen(\"%s\") = %zu\n", str1, ft_strlen(str1));
-    printf("ft_strlen(\"%s\") = %zu\n", str2, ft_strlen(str2));
-
-
-    return 0;
-}*/
