@@ -17,11 +17,11 @@ char	*ft_strdup(const char *string)
 	int		length;
 	int		i;
 
-	if (string == NULL || *string == '\0')
-		return (NULL);
 	i = 0;
 	length = ft_strlen(string);
 	str2 = malloc(length + 1 * sizeof(char));
+	if (str2 == NULL)
+		return (NULL);
 	while (i < length)
 	{
 		str2[i] = string[i];

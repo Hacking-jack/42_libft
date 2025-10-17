@@ -10,20 +10,25 @@
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
-//inserta un string en otro y pone el ultimo caracter a '\0'
+//inserts an string in other and ends with null cahr    '\0'
 size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
-	size_t	len_src;
-	size_t	copy_len;
+	size_t	i;
 
-	len_src = ft_strlen(src);
-	copy_len = len_src;
+	i = 0;
 	if (0 < size)
 	{
-		if (len_src >= size)
-			copy_len = size - 1;
-		ft_memcpy(dst, src, copy_len);
-		dst[copy_len] = '\0';
+		while (src[i] && i < size - 1)
+		{
+			dst[i] = src[i];
+			i++;
+		}
+		dst[i] = '\0';
 	}
-	return (len_src);
+	i = 0;
+	while (src[i] != '\0')
+	{
+		i++;
+	}
+	return (i);
 }

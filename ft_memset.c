@@ -22,7 +22,7 @@ void	*ft_memset(void *s, int c, size_t n)
 	{
 		*p++ = (unsigned char)c;
 	}
-	return (p);
+	return (s);
 }
 /*
 int main(void)

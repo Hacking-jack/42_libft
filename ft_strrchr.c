@@ -14,19 +14,15 @@
 char	*ft_strrchr(const char *string, int c)
 {
 	int	i;
-	int	j;
 
-	i = 0;
-	j = -1;
-	while (string[i])
+	i = ft_strlen(string);
+	if (c > 255)
+		c = c % 256;
+	while (i >= 0)
 	{
 		if (string[i] == c)
-			j = i ;
-		i++;
+			return ((char *)&string[i]);
+		i--;
 	}
-	if (c == '\0')
-		return ((char *) &string[i]);
-	if (j != -1)
-		return ((char *) &string[j]);
 	return (NULL);
 }

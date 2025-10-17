@@ -10,22 +10,24 @@
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
-//copia un array al otro
+//copies ana arrya to other
 void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
 	unsigned char	*des;
 	unsigned char	*sor;
 	size_t			coun;
 
+	if ((src == NULL && dest == NULL) || dest == src)
+		return (NULL);
 	sor = (unsigned char *)src;
 	des = (unsigned char *)dest;
 	coun = 0;
-	while (coun != n)
+	while (coun < n)
 	{
 		des[coun] = sor[coun];
 		coun++;
 	}
-	return (dest);
+	return (des);
 }
 /*
 #include <string.h>

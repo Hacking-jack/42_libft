@@ -13,11 +13,11 @@
 
 void	*ft_calloc(size_t num, size_t size)
 {
-	size_t	*iniciado;
+	size_t	*init;
 
-	iniciado = (size_t *)malloc(size * num * sizeof(size_t));
-	if (!iniciado)
+	init = malloc(size * num);
+	if (!init)
 		return (NULL);
-	ft_bzero(iniciado, size * num);
-	return (iniciado);
+	ft_bzero(init, size * num);
+	return (init);
 }

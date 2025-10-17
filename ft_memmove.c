@@ -10,10 +10,10 @@
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
-//esto copia un array en otro
-//igual que memcpy pero, evita
-//que se solape el final del array
-//(copia de atras a alante)
+//copies an array into another
+//same as memcpy  but prevents
+//array overlapping it copies form 
+//the back to the front 
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
 	unsigned char	*dst;
@@ -23,6 +23,8 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	dst = (unsigned char *)dest;
 	sor = (unsigned char *)src;
 	i = 0;
+	if (dest == src || n == 0)
+		return (dest);
 	if (dst > sor)
 	{
 		while (n--)

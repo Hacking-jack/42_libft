@@ -11,35 +11,38 @@
 /* ************************************************************************** */
 #include "libft.h"
 
-size_t	count_num(const char *s, char c)
+static int	count_words(char const *s, char c)
 {
-	size_t	count;
-	size_t	i;
+	int	i;
+	int	w;
 
-	count = 0;
 	i = 0;
+	w = 0;
 	while (s[i])
 	{
-		while (s[i] == c)
-			i++;
-		if (s[i])
-			count++;
-		while (s[i] && s[i] != c)
-			i++;
+		if ((s[i] != c) && (i == 0 || s[i - 1] == c))
+			w++;
+		i++;
 	}
-	return (count);
+	return (w);
 }
 
-void	add_word(char **spl, const char *s, char c)
+static void	free_split(char **res, int j)
 {
-	size_t	i;
-	size_t	j;
-	size_t	start;
+	while (--j >= 0)
+		free(res[j]);
+	free(res);
+}
+
+static char	**fill_split(char const *s, char c, char **res, int words)
+{
+	int	i;
+	int	j;
+	int	start;
 
 	i = 0;
 	j = 0;
-	start = 0;
-	while (s[i])
+	while (s[i] && j < words)
 	{
 		while (s[i] == c)
 			i++;
@@ -48,38 +51,26 @@ void	add_word(char **spl, const char *s, char c)
 			i++;
 		if (i > start)
 		{
-			spl[j] = malloc((i - start + 1) * sizeof(char));
-			if (!spl[j])
-				return ;
-			ft_memcpy(spl[j], s + start, i - start);
-			spl[j][i - start] = '\0';
+			res[j] = ft_substr(s, start, i - start);
+			if (!res[j])
+				return (free_split(res, j), NULL);
 			j++;
 		}
 	}
-	spl[j] = NULL;
+	res[j] = 0;
+	return (res);
 }
 
-char	**ft_split(const char *s, char c)
+char	**ft_split(char const *s, char c)
 {
-	char	**spl;
-	size_t	words;
+	char	**res;
+	int		words;
 
 	if (!s)
 		return (NULL);
-	words = count_num(s, c);
-	if (words != 0)
-	{
-		spl = malloc((words + 1) * sizeof(char *));
-		if (!spl)
-			return (NULL);
-		add_word(spl, s, c);
-	}
-	else
-	{
-		spl = malloc(sizeof(char *));
-		if (!spl)
-			return (NULL);
-		spl[0] = NULL;
-	}
-	return (spl);
+	words = count_words(s, c);
+	res = malloc(sizeof(char *) * (words + 1));
+	if (!res)
+		return (NULL);
+	return (fill_split(s, c, res, words));
 }
