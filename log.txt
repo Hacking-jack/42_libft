@@ -1,0 +1,969 @@
+=== LIBFT COMPREHENSIVE TEST ===
+
+=== TESTING ft_isalpha ===
+--- Letters ---
+'a': ft=1, std=1024 -> FAIL
+'B': ft=1, std=1024 -> FAIL
+'c': ft=1, std=1024 -> FAIL
+'D': ft=1, std=1024 -> FAIL
+'e': ft=1, std=1024 -> FAIL
+'F': ft=1, std=1024 -> FAIL
+'z': ft=1, std=1024 -> FAIL
+'Z': ft=1, std=1024 -> FAIL
+
+--- Non-letters ---
+'0': ft=0, std=0 -> PASS
+'@': ft=0, std=0 -> PASS
+' ': ft=0, std=0 -> PASS
+'7': ft=0, std=0 -> PASS
+'!': ft=0, std=0 -> PASS
+
+=== TESTING ft_isdigit ===
+'0': ft=48, std=2048 -> FAIL
+'1': ft=49, std=2048 -> FAIL
+'2': ft=50, std=2048 -> FAIL
+'3': ft=51, std=2048 -> FAIL
+'4': ft=52, std=2048 -> FAIL
+'5': ft=53, std=2048 -> FAIL
+'6': ft=54, std=2048 -> FAIL
+'7': ft=55, std=2048 -> FAIL
+'8': ft=56, std=2048 -> FAIL
+'9': ft=57, std=2048 -> FAIL
+
+=== TESTING ft_isalnum ===
+'a': ft=1, std=8 -> FAIL
+'1': ft=1, std=8 -> FAIL
+'!': ft=0, std=0 -> PASS
+' ': ft=0, std=0 -> PASS
+
+=== TESTING ft_isascii ===
+-1: ft=0, std=0 -> PASS
+32: ft=1, std=1 -> PASS
+65: ft=1, std=1 -> PASS
+98: ft=1, std=1 -> PASS
+
+=== TESTING ft_isprint ===
+0: ft=0, std=0 -> PASS
+10: ft=0, std=0 -> PASS
+20: ft=0, std=0 -> PASS
+30: ft=0, std=0 -> PASS
+40: ft=1, std=16384 -> FAIL
+50: ft=1, std=16384 -> FAIL
+60: ft=1, std=16384 -> FAIL
+70: ft=1, std=16384 -> FAIL
+80: ft=1, std=16384 -> FAIL
+90: ft=1, std=16384 -> FAIL
+100: ft=1, std=16384 -> FAIL
+110: ft=1, std=16384 -> FAIL
+120: ft=1, std=16384 -> FAIL
+
+=== TESTING ft_strlen ===
+'' -> ft=0 std=0 -> PASS
+'a' -> ft=1 std=1 -> PASS
+'Hello World' -> ft=11 std=11 -> PASS
+'Long string to test length on and on...' -> ft=39 std=39 -> PASS
+
+=== TESTING ft_memset ===
+memset: PASS
+
+=== TESTING ft_bzero ===
+bzero: PASS
+
+=== TESTING ft_memcpy ===
+memcpy: PASS
+
+=== TESTING ft_memmove ===
+memmove: PASS
+
+=== TESTING ft_strlcpy ===
+ft_strlcpy returned 10, buffer: 'Hello'
+strlcpy:    returned 10, buffer: 'Hello'
+
+=== TESTING ft_strlcat ===
+ft_strlcat returned 10, buffer: 'HelloWorld'
+strlcat:    returned 10, buffer: 'HelloWorld'
+
+=== TESTING ft_toupper ===
+0 -> ft=0 std=0 [PASS]
+13 -> ft=13 std=13 [PASS]
+26 -> ft=26 std=26 [PASS]
+39 -> ft=39 std=39 [PASS]
+52 -> ft=52 std=52 [PASS]
+65 -> ft=65 std=65 [PASS]
+78 -> ft=78 std=78 [PASS]
+91 -> ft=91 std=91 [PASS]
+104 -> ft=72 std=72 [PASS]
+117 -> ft=85 std=85 [PASS]
+
+=== TESTING ft_tolower ===
+0 -> ft=0 std=0 [PASS]
+13 -> ft=13 std=13 [PASS]
+26 -> ft=26 std=26 [PASS]
+39 -> ft=39 std=39 [PASS]
+52 -> ft=52 std=52 [PASS]
+65 -> ft=97 std=97 [PASS]
+78 -> ft=110 std=110 [PASS]
+91 -> ft=91 std=91 [PASS]
+104 -> ft=104 std=104 [PASS]
+117 -> ft=117 std=117 [PASS]
+
+=== TESTING ft_strchr ===
+ft_strchr -> the char
+strchr    -> the char
+
+=== TESTING ft_strrchr ===
+ft_strrchr -> a
+strrchr    -> a
+
+=== TESTING ft_strncmp ===
+Compare 'abc', 'abd', 2 -> 0 vs 0
+Compare 'abc', 'abc', 5 -> -1 vs 0
+
+=== TESTING ft_memchr ===
+ft_memchr -> 0x7ffed2bba1e5
+memchr    -> 0x7ffed2bba1e5
+
+=== TESTING ft_atoi ===
+'0' -> ft=0 std=0
+'42' -> ft=42 std=42
+'  -12' -> ft=-12 std=-12
+' +123abc' -> ft=123 std=123
+'2147483647' -> ft=2147483647 std=2147483647
+
+=== TESTING ft_memcmp ===
+ft_memcmp -> -1
+memcmp    -> -1
+
+=== TESTING ft_strnstr ===
+ft_strnstr -> World
+strnstr    -> World
+
+=== TESTING ft_calloc ===
+ft_calloc zeroed? YES
+
+=== TESTING FT_STRDUP ===
+=== CASOS NORMALES ===
+Test: String vacío
+Input: ""
+Original: ""
+Custom:   ""
+Result: ✓ PASS
+
+Test: String corto
+Input: "Hola"
+Original: "Hola"
+Custom:   "Hola"
+Result: ✓ PASS
+
+Test: String medio
+Input: "Hello World!"
+Original: "Hello World!"
+Custom:   "Hello World!"
+Result: ✓ PASS
+
+Test: String largo
+Input: "Esta es una cadena bastante larga para probar la duplicación"
+Original: "Esta es una cadena bastante larga para probar la duplicación"
+Custom:   "Esta es una cadena bastante larga para probar la duplicación"
+Result: ✓ PASS
+
+=== CARACTERES ESPECIALES ===
+Test: Con espacios
+Input: "   espacios   "
+Original: "   espacios   "
+Custom:   "   espacios   "
+Result: ✓ PASS
+
+Test: Con tabs
+Input: "		con	tabs	"
+Original: "		con	tabs	"
+Custom:   "		con	tabs	"
+Result: ✓ PASS
+
+Test: Con newlines
+Input: "line1
+line2
+line3"
+Original: "line1
+line2
+line3"
+Custom:   "line1
+line2
+line3"
+Result: ✓ PASS
+
+Test: Caracteres especiales
+Input: "!@#$%^&*()_+-=[]{}|;:,.<>?"
+Original: "!@#$%^&*()_+-=[]{}|;:,.<>?"
+Custom:   "!@#$%^&*()_+-=[]{}|;:,.<>?"
+Result: ✓ PASS
+
+=== CASOS LÍMITE ===
+Test: Un solo carácter
+Input: "A"
+Original: "A"
+Custom:   "A"
+Result: ✓ PASS
+
+✓ PASS - Memoria diferente asignada
+=== MANEJO DE ERRORES ===
+Test: Entrada NULL
+✓ PASS - Manejo correcto de NULL input
+
+=== TEST DE ESTRÉS ===
+✓ PASS - Duplicación en cadena larga correcta
+=== ft_strdup tests completed ===
+
+=== TESTING FT_SUBSTR ===
+Case 1: expected 'Hello' got 'Hello'
+Case 2: expected 'World' got 'World'
+Case 3: expected '' got ''
+Case 4: start beyond len -> got 'ld'
+Case 5: NULL input -> got '(null)'
+=== ft_substr tests completed ===
+
+=== Testing ft_strjoin ===
+Caso 1: ft_strjoin("Hello", "World") => "HelloWorld"
+Caso 2: ft_strjoin("Hello ", "World") => "Hello World"
+Caso 3: ft_strjoin(NULL, "World") => NULL
+Caso 4: ft_strjoin("Hello", NULL) => NULL
+=== ft_strjoin tests completed ===
+
+=== TESTING FT_STRTRIM ===
+Test 1 - Espacios: "   Hello World   " -> "Hello World" [OK]
+Test 2 - 'x' set: "xx42xx" -> "42"
+Test 3 - Set vacío: "Hello" -> "Hello"
+Test 4 - Input vacío: "" -> ""
+Test 5 - NULL input -> NULL
+=== ft_strtrim tests completed ===
+
+=== TESTING FT_SPLIT ===
+Test 1 - Split básico: "Hello World Test" -> Result: ["Hello", "World", "Test"]
+ [OK]
+Test 2 - Múltiples espacios: "Hello   World   Test" -> Result: ["Hello", "World", "Test"]
+ [OK]
+Test 3 - String vacío: "" -> Result: []
+ [OK]
+Test 4 - Solo espacios: "     " -> Result: []
+ [OK]
+Test 5 - Espacios inicio/fin: " Hello World " -> Result: ["Hello", "World"]
+ [OK]
+Test 6 - NULL string: NULL -> NULL [OK]
+Test 7 - Coma delimiter: "apple,banana,cherry" -> Result: ["apple", "banana", "cherry"]
+ [OK]
+Test 8 - Sin espacios: "Hello" -> Result: ["Hello"]
+ [OK]
+Test 9 - Asterisco delimiter: "a*b*c*d" -> Result: ["a", "b", "c", "d"]
+ [OK]
+Test 10 - String largo: "a b c d e f g h i j k l m n o p" -> Array con 16 elementos [OK]
+=== TESTING FT_ITOA ===
+
+Test: Zero
+  Input: 0
+  Original itoa: '0'
+  Your ft_itoa:  '0'
+  ✅ PASS
+
+Test: Positive single digit
+  Input: 1
+  Original itoa: '1'
+  Your ft_itoa:  '1'
+  ✅ PASS
+
+Test: Negative single digit
+  Input: -1
+  Original itoa: '-1'
+  Your ft_itoa:  '-1'
+  ✅ PASS
+
+Test: Small positive
+  Input: 42
+  Original itoa: '42'
+  Your ft_itoa:  '42'
+  ✅ PASS
+
+Test: Small negative
+  Input: -42
+  Original itoa: '-42'
+  Your ft_itoa:  '-42'
+  ✅ PASS
+
+Test: Medium positive
+  Input: 123
+  Original itoa: '123'
+  Your ft_itoa:  '123'
+  ✅ PASS
+
+Test: Medium negative
+  Input: -123
+  Original itoa: '-123'
+  Your ft_itoa:  '-123'
+  ✅ PASS
+
+Test: Round number positive
+  Input: 1000
+  Original itoa: '1000'
+  Your ft_itoa:  '1000'
+  ✅ PASS
+
+Test: Round number negative
+  Input: -1000
+  Original itoa: '-1000'
+  Your ft_itoa:  '-1000'
+  ✅ PASS
+
+Test: INT_MAX
+  Input: 2147483647
+  Original itoa: '2147483647'
+  Your ft_itoa:  '2147483647'
+  ✅ PASS
+
+Test: INT_MIN
+  Input: -2147483648
+  Original itoa: '-2147483648'
+  Your ft_itoa:  '-2147483648'
+  ✅ PASS
+
+Test: Single digit max
+  Input: 9
+  Original itoa: '9'
+  Your ft_itoa:  '9'
+  ✅ PASS
+
+Test: Single digit min
+  Input: -9
+  Original itoa: '-9'
+  Your ft_itoa:  '-9'
+  ✅ PASS
+
+Test: Two digits start
+  Input: 10
+  Original itoa: '10'
+  Your ft_itoa:  '10'
+  ✅ PASS
+
+Test: Two digits negative start
+  Input: -10
+  Original itoa: '-10'
+  Your ft_itoa:  '-10'
+  ✅ PASS
+
+Test: Two digits max
+  Input: 99
+  Original itoa: '99'
+  Your ft_itoa:  '99'
+  ✅ PASS
+
+Test: Two digits min
+  Input: -99
+  Original itoa: '-99'
+  Your ft_itoa:  '-99'
+  ✅ PASS
+
+Test: Three digits start
+  Input: 100
+  Original itoa: '100'
+  Your ft_itoa:  '100'
+  ✅ PASS
+
+Test: Three digits negative start
+  Input: -100
+  Original itoa: '-100'
+  Your ft_itoa:  '-100'
+  ✅ PASS
+
+Test: With zeros inside
+  Input: 1001
+  Original itoa: '1001'
+  Your ft_itoa:  '1001'
+  ✅ PASS
+
+Test: With zeros inside negative
+  Input: -1001
+  Original itoa: '-1001'
+  Your ft_itoa:  '-1001'
+  ✅ PASS
+
+Test: Large number
+  Input: 1000000
+  Original itoa: '1000000'
+  Your ft_itoa:  '1000000'
+  ✅ PASS
+
+Test: Large negative number
+  Input: -1000000
+  Original itoa: '-1000000'
+  Your ft_itoa:  '-1000000'
+  ✅ PASS
+
+Test: Max int exact
+  Input: 2147483647
+  Original itoa: '2147483647'
+  Your ft_itoa:  '2147483647'
+  ✅ PASS
+
+Test: Almost min int
+  Input: -2147483647
+  Original itoa: '-2147483647'
+  Your ft_itoa:  '-2147483647'
+  ✅ PASS
+
+=== TESTS COMPLETED ===
+
+=== COMPREHENSIVE FT_STRMAPI TESTING ===
+
+=== TESTING FT_STRMAPI EDGE CASES ===
+Test: Empty string
+  Input: ""
+  Expected: ""
+  Got:      ""
+  Result: ✅ PASS
+
+Test: NULL string input
+  Input: NULL
+  Got: NULL
+  Result: ✅ PASS
+
+Test: NULL function input
+  Input: 'test' with NULL function
+  Got: NULL
+  Result: ✅ PASS
+
+Test: Both inputs NULL
+  Input: NULL, NULL
+  Got: NULL
+  Result: ✅ PASS
+
+
+=== TESTING FT_STRMAPI NORMAL CASES ===
+Test: To upper even positions
+  Input: "hello"
+  Expected: "HeLlO"
+  Got:      "HeLlO"
+  Result: ✅ PASS
+
+Test: Spaces with rotation
+  Input: "abc"
+  Expected: "ace"
+  Got:      "ace"
+  Result: ✅ PASS
+
+Test: Special characters
+  Input: "a!b@c#"
+  Expected: "a!c@e#"
+  Got:      "a!d@g#"
+  Result: ❌ FAIL
+
+Test: Long string
+  Input: "abcdefghij"
+  Expected: "AbCdEfGhIj"
+  Got:      "AbCdEfGhIj"
+  Result: ✅ PASS
+
+Test: Single char
+  Input: "a"
+  Expected: "A"
+  Got:      "A"
+  Result: ✅ PASS
+
+Test: Identity function
+  Input: "Hello World!"
+  Expected: "Hello World!"
+  Got:      "Hello World!"
+  Result: ✅ PASS
+
+
+=== TESTING FT_STRMAPI COMPLEX CASES ===
+Test: Position digits
+  Input: "xxxxx"
+  Expected: "01234"
+  Got:      "01234"
+  Result: ✅ PASS
+
+Test: Alternate XY
+  Input: "hello"
+  Expected: "XYXYX"
+  Got:      "XYXYX"
+  Result: ✅ PASS
+
+Test: Numbers identity
+  Input: "12345"
+  Got: "12345"
+  Result: ✅ PASS
+
+Test: ASCII codes
+  Input: "ABC"
+  Got: "ABC"
+  Result: ❌ FAIL
+
+
+=== TESTING FT_STRMAPI MEMORY BEHAVIOR ===
+✅ PASS - Memory is properly allocated (different addresses)
+  Original: 0x55ad1f7281e7
+  Result:   0x55ad4381c380
+Result: ✅ PASS - Original unchanged
+
+=== FT_STRMAPI TESTS COMPLETED ===
+
+=== COMPREHENSIVE FT_STRITERI TESTING ===
+
+=== TESTING FT_STRITERI EDGE CASES ===
+Test: Empty string
+  Input:    ""
+  Expected: ""
+  Got:      ""
+  Result: ✅ PASS
+
+Test: NULL string input
+  Input: NULL
+  Result: ✅ PASS (no crash)
+
+Test: NULL function input
+  Input: 'test' with NULL function
+  Result: ✅ PASS (unchanged)
+
+Test: Both inputs NULL
+  Input: NULL, NULL
+  Result: ✅ PASS (no crash)
+
+
+=== TESTING FT_STRITERI NORMAL CASES ===
+Test: To upper even positions
+  Input:    "hello"
+  Expected: "HeLlO"
+  Got:      "HeLlO"
+  Result: ✅ PASS
+
+Test: Character rotation
+  Input:    "abc"
+  Expected: "ace"
+  Got:      "ace"
+  Result: ✅ PASS
+
+Test: Special characters with rotation
+  Input:    "a!b@c#"
+  Expected: "a!c@e#"
+  Got:      "a!d@g#"
+  Result: ❌ FAIL
+
+Test: Long string with upper even
+  Input:    "abcdefghij"
+  Expected: "AbCdEfGhIj"
+  Got:      "AbCdEfGhIj"
+  Result: ✅ PASS
+
+Test: Single char to upper
+  Input:    "a"
+  Expected: "A"
+  Got:      "A"
+  Result: ✅ PASS
+
+Test: Numbers with rotation
+  Input:    "12345"
+  Expected: "12345"
+  Got:      "12345"
+  Result: ✅ PASS
+
+
+=== TESTING FT_STRITERI COMPLEX CASES ===
+Test: Position digits replacement
+  Input:    "xxxxx"
+  Expected: "01234"
+  Got:      "01234"
+  Result: ✅ PASS
+
+Test: Alternate XY replacement
+  Input:    "hello"
+  Expected: "XYXYX"
+  Got:      "XYXYX"
+  Result: ✅ PASS
+
+Test: Increment ASCII chars
+  Input:    "ABC"
+  Expected: "BCD"
+  Got:      "BCD"
+  Result: ✅ PASS
+
+Test: Mixed case with upper even
+  Input:    "AbCdEf"
+  Expected: "AbCdEf"
+  Got:      "AbCdEf"
+  Result: ✅ PASS
+
+Test: Alphabet boundaries with rotation
+  Input:    "xyz"
+  Expected: "xzb"
+  Got:      "xzb"
+  Result: ✅ PASS
+
+Test: Multiple sequential transformations
+  Original: "hello"
+  After upper even: "HeLlO"
+  Result: ✅ PASS
+
+
+=== TESTING FT_STRITERI MODIFICATION BEHAVIOR ===
+Test: In-place modification
+  Before: "test" at 0x55ad4381c380
+  After:  "TeSt" at 0x55ad43A! 
+	~��STDOUTHola Mundo   espacios   Línea1
+Línea2	TabuladoABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUTexto con	tabulación
+ynueva líneaASCII: ~��Español: ñáéíóúEste texto va a stdout81c380
+  Result: ✅ PASS (same address, modified)
+
+Test: Reusability after modification
+  Original: "hello world"
+  After first mod: "HeLlO WoRlD"
+  After second mod: "IfMmP!XpSmE"
+  Result: ✅ PASS (multiple modifications work)
+
+
+=== TESTING FT_STRITERI MEMORY SAFETY ===
+Test: Memory after null terminator integrity
+  Before: buffer='hello', after_null='SAFE'
+  After:  buffer='HeLlO', after_null='SAFE'
+  Result: ✅ PASS (memory intact)
+
+Test: Exact buffer size
+  Before: 'hello'
+  After:  'ifmmp'
+  Result: ✅ PASS (no buffer overflow)
+
+
+=== TESTING FT_STRITERI PERFORMANCE CASES ===
+Test: Very long string
+  Length: 999 characters
+  Result: ✅ PASS (all processed)
+
+=== FT_STRITERI TESTS COMPLETED ===
+
+=== TEST COMPLETO FT_PUTCHAR_FD ===
+
+=== TESTING FT_PUTCHAR_FD - CASOS BÁSICOS ===
+Test 1: Carácter 'A' en stdout
+ <- Debería ver 'A' antes de este texto
+Test 2: Carácter '7' en stderr
+ <- Debería ver '7' antes de este texto (en stderr)
+Test 3: Carácter '!' en stdout
+ <- Debería ver '!' antes de este texto
+
+=== TESTING FT_PUTCHAR_FD - CASOS LÍMITE ===
+Test 1: Carácter nulo (\0)
+ <- Si no ves nada antes, es correcto (carácter nulo)
+Test 2: Nueva línea
+Antes -><- Después
+Test 3: Tabulación
+Inicio||Fin
+
+=== TESTING FT_PUTCHAR_FD - OPERACIONES CON ARCHIVOS ===
+Contenido del archivo: 'Hola
+' ✅ PASS
+
+=== TESTING FT_PUTCHAR_FD - CARACTERES ESPECIALES ===
+Test 1: Caracteres de control ASCII
+Campana (\a): 
+Retroceso (\b): 
+Retorno de carro (\r):  (cursor al inicio)
+Test 2: Caracteres ASCII extendidos
+ASCII 126: 
+ASCII 127: 
+
+=== TESTING FT_PUTCHAR_FD - CASOS DE ERROR ===
+Test 1: File descriptor -1
+ <- No debería crash (manejo silencioso de error)
+Test 2: File descriptor 999 (probablemente no existente)
+ <- No debería crash
+Test 3: File descriptor cerrado
+ <- File descriptor cerrado - no debería crash
+
+=== TESTING FT_PUTCHAR_FD - LÍMITES UNICODE/CHAR ===
+Test 1: Límites de char
+Char 127: 
+Char -128:  (comportamiento indefinido, pero no debería crash)
+Test 2: Valores fuera de rango
+Char 255:  (comportamiento dependiente del sistema)
+
+=== TESTING FT_PUTCHAR_FD - MÚLTIPLES LLAMADAS ===
+Resultado múltiples llamadas: 'MultipleTest
+' ✅ PASS
+
+=== TESTING FT_PUTCHAR_FD - STDOUT vs STDERR ===
+Escribiendo en stdout (fd 1): 
+Escribiendo en stderr (fd 2):  (puede verse igual o diferente según la terminal)
+
+=== TESTS FT_PUTCHAR_FD COMPLETADOS ===
+
+=== TEST COMPLETO FT_PUTSTR_FD ===
+
+=== TESTING FT_PUTSTR_FD - CASOS BÁSICOS ===
+Test 1: String 'Hola Mundo' en stdout
+Salida: 
+Test 2: String vacío ''
+Salida: '' (debería ser vacío)
+Test 3: String con espacios
+Salida: 
+
+=== TESTING FT_PUTSTR_FD - CASOS LÍMITE ===
+Test 1: String NULL
+Salida:  (no debería crash, posiblemente nada o comportamiento definido)
+Test 2: String con caracteres especiales
+Salida: 
+Test 3: String largo
+Salida (primeros 50 chars): 
+
+=== TESTING FT_PUTSTR_FD - OPERACIONES CON ARCHIVOS ===
+Contenido del archivo:
+Primera línea
+Segunda línea
+Tercera línea con número: 42
+✅ PASS - Contenido correcto
+
+=== TESTING FT_PUTSTR_FD - CARACTERES ESPECIALES ===
+Test 1: String con caracteres de control
+Salida:  (fin del test)
+Test 2: Caracteres ASCII extendidos
+Salida: 
+Test 3: Caracteres UTF-8
+Salida: 
+
+=== TESTING FT_PUTSTR_FD - CASOS DE ERROR ===
+Test 1: File descriptor -1
+ <- No debería crash
+Test 2: File descriptor 999
+ <- No debería crash
+Test 3: String NULL con fd 1
+ <- Comportamiento con NULL
+Test 4: File descriptor de solo lectura
+ <- Escritura en fd de solo lectura
+
+=== TESTING FT_PUTSTR_FD - MÚLTIPLES STRINGS ===
+Contenido del archivo:
+String 1
+String 2
+String 3
+Final del archivo
+✅ PASS - Múltiples strings correctos
+
+=== TESTING FT_PUTSTR_FD - STDOUT vs STDERR ===
+Escribiendo en stdout (fd 1): 
+Escribiendo en stderr (fd 2):  (puede verse diferente en algunas terminales)
+
+=== TESTING FT_PUTSTR_FD - RENDIMIENTO ===
+Escribiendo string de 10000 caracteres...
+✅ PASS - String grande escrito sin crash
+
+=== TESTING FT_PUTSTR_FD - FORMATEO ===
+Archivo formateado:
+=== INICIO DEL ARCHIVO ===
+Línea 1: Valor = 42
+Línea 2: Texto con	tabulación
+LíneaHola Mundo
+
+   espacios   
+
+Texto con	tabulación
+ABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTU
+Texto con newline
+
+Línea1
+Línea2
+Línea3
+Español: ñáéíóú
+
+Esta línea va a stdout
+Otra línea en stdout
+042123-1-42-1232147483647-21474836481001000100000123456789-9-8-7-6-5-4-3-2-1123456789987654321 3: Caracteres ~!@#$%^&*()
+=== FIN DEL ARCHIVO ===
+✅ PASS - Formateo correcto
+
+=== TESTS FT_PUTSTR_FD COMPLETADOS ===
+
+=== TEST COMPLETO FT_PUTENDL_FD ===
+
+=== TESTING FT_PUTENDL_FD - CASOS BÁSICOS ===
+Test 1: String 'Hola Mundo' en stdout
+Salida esperada: 'Hola Mundo' seguido de nueva línea
+Salida real: (debería estar en la línea siguiente)
+Test 2: String vacío ''
+Salida: '' (debería ser solo nueva línea)
+Test 3: String con espacios
+Salida: (nueva línea automática)
+
+=== TESTING FT_PUTENDL_FD - CASOS LÍMITE ===
+Test 1: String NULL
+Salida:  (comportamiento con NULL - posiblemente nueva línea o nada)
+Test 2: String con caracteres especiales
+Salida: (debería tener nueva línea)
+Test 3: String largo
+Salida: (string largo + nueva línea)
+
+=== TESTING FT_PUTENDL_FD - OPERACIONES CON ARCHIVOS ===
+Contenido del archivo:
+Primera línea
+Segunda línea
+Tercera línea con número: 42
+
+Última línea
+❌ FAIL - Se esperaban 5 líneas, se encontraron 4
+
+=== TESTING FT_PUTENDL_FD vs FT_PUTSTR_FD ===
+putendl_fd produjo: 'Línea con putendl
+'
+putstr_fd + putchar_fd produjo: 'Línea con putstr
+'
+❌ FAIL - Los resultados son diferentes
+
+=== TESTING FT_PUTENDL_FD - CARACTERES ESPECIALES ===
+Test 1: String que ya termina con \n
+Salida: (debería tener nueva línea extra)
+Test 2: String con múltiples newlines
+Salida: (nueva línea adicional al final)
+Test 3: Caracteres UTF-8
+Salida: (caracteres especiales + nueva línea)
+
+=== TESTING FT_PUTENDL_FD - CASOS DE ERROR ===
+Test 1: File descriptor -1
+ <- No debería crash
+Test 2: File descriptor 999
+ <- No debería crash
+Test 3: String NULL con fd 1
+ <- Comportamiento con NULL
+Test 4: String NULL con fd 2
+ <- Comportamiento con NULL en stderr
+
+=== TESTING FT_PUTENDL_FD - MÚLTIPLES LÍNEAS ===
+Contenido del archivo:
+Línea 1 del archivo
+Línea 2 con algunos datos
+Línea 3: valor = 123
+
+Última línea del archivo
+✅ PASS - 5 líneas correctamente escritas
+
+=== TESTING FT_PUTENDL_FD - STDOUT vs STDERR ===
+Escribiendo en stdout (fd 1):
+Escribiendo en stderr (fd 2):
+(pueden verse igual o diferente según la terminal)
+
+=== TESTING FT_PUTENDL_FD - FORMATEO COMPLEJO ===
+Archivo de log creado:
+=== INICIO DEL LOG ===
+
+TIMESTAMP: 2024-01-01 12:00:00
+LEVEL: INFO
+MESSAGE: Sistema iniciado correctamente
+
+TIMESTAMP: 2024-01-01 12:00:05
+LEVEL: WARNING
+MESSAGE: Configuración por defecto cargada
+
+=== FIN DEL LOG ===
+✅ PASS - Formato de log correcto con líneas vacías
+
+=== TESTING FT_PUTENDL_FD - RENDIMIENTO ===
+Escribiendo 100 líneas...
+Líneas escritas: 100, Líneas leídas: 100
+✅ PASS - Todas las líneas escritas correctamente
+
+=== TESTS FT_PUTENDL_FD COMPLETADOS ===
+
+=== TEST COMPLETO FT_PUTNBR_FD ===
+
+=== TESTING FT_PUTNBR_FD - CASOS BÁSICOS ===
+Test 1: Números positivos
+Salida:  (debería ser '0')
+Salida:  (debería ser '42')
+Salida:  (debería ser '123')
+Test 2: Números negativos
+Salida:  (debería ser '-1')
+Salida:  (debería ser '-42')
+Salida:  (debería ser '-123')
+
+=== TESTING FT_PUTNBR_FD - CASOS LÍMITE ===
+Test 1: Límites de int
+Salida:  (debería ser '2147483647')
+Salida:  (debería ser '-2147483648')
+Test 2: Números con ceros
+Salida:  (debería ser '100')
+Salida:  (debería ser '1000')
+Salida:  (debería ser '10000')
+
+=== TESTING FT_PUTNBR_FD - OPERACIONES CON ARCHIVOS ===
+Contenido del archivo:
+0
+42
+-123
+2147483647
+-2147483648
+✅ PASS - Todos los números escritos correctamente
+
+=== TESTING FT_PUTNBR_FD - NÚMEROS ESPECIALES ===
+Test 1: Dígitos individuales
+Salida:  Salida:  Salida:  Salida:  Salida:  Salida:  Salida:  Salida:  Salida:  Salida:  
+Salida:  Salida:  Salida:  Salida:  Salida:  Salida:  Salida:  Salida:  Salida:  
+Test 3: Números con patrones
+Salida:  (debería ser '123456789')
+Salida:  (debería ser '987654321')
+
+=== TESTING FT_PUTNBR_FD - CASOS DE ERROR ===
+Test 1: File descriptor -1
+ <- No debería crash
+Test 2: File descriptor 999
+ <- No debería crash
+Test 3: File descriptor de solo lectura
+ <- Escritura en fd de solo lectura
+
+=== TESTING FT_PUTNBR_FD - MÚLTIPLES NÚMEROS ===
+Contenido del archivo: 1, -2, 3, -4, 5, -6, 7, -8, 9, -10, 100, -1000, 123123452147483646-21474836471000000000-10000000000101100110001-100145, -67890
+✅ PASS - Secuencia de números correcta
+
+=== TESTING FT_PUTNBR_FD - STDOUT vs STDERR ===
+Escribiendo en stdout (fd 1): 
+Escribiendo en stderr (fd 2):  (puede verse diferente en algunas terminales)
+
+=== TESTING FT_PUTNBR_FD - NÚMEROS GRANDES ===
+Test 1: Números cerca de INT_MAX
+Salida:  (debería ser '2147483646')
+Salida:  (debería ser '-2147483647')
+Test 2: Números con muchos dígitos
+Salida:  (debería ser '1000000000')
+Salida:  (debería ser '-1000000000')
+
+=== TESTING FT_PUTNBR_FD - MANEJO DE CEROS ===
+Test 1: Cero simple
+Salida:  (debería ser '0')
+Test 2: Números que contienen ceros
+Salida:  (debería ser '101')
+Salida:  (debería ser '1001')
+Salida:  (debería ser '10001')
+Salida:  (debería ser '-1001')
+
+=== TESTING FT_PUTNBR_FD - RENDIMIENTO ===
+Escribiendo 50 números...
+Líneas escritas: 100 (esperado: 100)
+✅ PASS - Todos los números escritos correctamente
+
+=== TESTING FT_PUTNBR_FD vs FT_ITOA ===
+putnbr_fd produjo:
+0
+42
+-123
+2147483647
+-2147483648
+1001
+-9999
+
+itoa + putstr_fd produjo:
+0
+42
+-123
+2147483647
+-2147483648
+1001
+-9999
+
+✅ PASS - Ambas approaches producen el mismo resultado
+
+=== TESTS FT_PUTNBR_FD COMPLETADOS ===
+
+=== TESTING COMPLETE ===
